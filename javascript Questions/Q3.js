@@ -1,7 +1,12 @@
 function MySetInterval(callback,delay){
-
-
-    setTimeout(()=>{
-        console.log(Running)
-    },1000)
+let timerId;
+    function run(){
+        callback()
+    timerId=setTimeout(run,delay);
+    }
+    return run;
 }
+
+setTimeout(()=>{
+    console.log("stopped");
+},6000)
