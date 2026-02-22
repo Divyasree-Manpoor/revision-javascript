@@ -1,10 +1,11 @@
 function MySetInterval(callback,delay){
-let timerId;
+let Id;
     function run(){
         callback()
-    timerId=setTimeout(run,delay);
+    Id=setTimeout(run,delay);
     }
-    return run;
+    run();
+    return Id;
 }
 
 setTimeout(()=>{
